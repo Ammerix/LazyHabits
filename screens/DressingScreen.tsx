@@ -4,20 +4,19 @@ import SearchBar from "../components/searchBar";
 import { DressingScreenProps } from "../navigation/app-stacks";
 //import ClothesDbApi from "../services/clothesdbapi.service";
 
-
 interface DressingScreenState {
-    //Dressings: Array<Clothes>;
+  //Dressings: Array<Clothes>;
 }
 
 export default class DressingScreen extends Component<
-    DressingScreenProps,
-    DressingScreenState
+  DressingScreenProps,
+  DressingScreenState
 > {
-    state: DressingScreenState = {
-        Dressings: [],
-    };
+  state: DressingScreenState = {
+    Dressings: [],
+  };
 
-    /* ======================== A REVOIR SUIVANT L'API ========================
+  /* ======================== A REVOIR SUIVANT L'API ========================
     getResults = (name: string) => {
         ClothesVDbApi.searchDressingsByName(name).then((results) => {
             this.setState({ Dressings: results });
@@ -25,24 +24,24 @@ export default class DressingScreen extends Component<
     };
      ========================================================================*/
 
-    render() {
-        const { navigation } = this.props;
+  render() {
+    const { navigation } = this.props;
 
-        return (
-            <View style={styles.container}>
-                <Text>Pouet</Text>
-                {/*<SearchBar onSubmitEditing={this.getResults} />
+    return (
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Text>Dressing</Text>
+        {/*<SearchBar onSubmitEditing={this.getResults} />
                 <ClothesList
                     Clothes={this.state.Clothes}
                     navigation={navigation}
         />*/}
-            </View>
-        );
-    }
+      </View>
+    );
+  }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-});

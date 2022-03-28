@@ -9,8 +9,8 @@ import {
 } from "react-native";
 import Input from "../components/Input";
 import authenticationService, {
-    User,
-  } from "../services/authentication.service";
+  User,
+} from "../services/authentication.service";
 
 interface AuthenticationFormState {
   login: string;
@@ -47,19 +47,19 @@ export default class AuthenticationForm extends Component<
     Alert.alert("Action sélectionnée", msg);
   };
 
-// A REVOIR AVEC REACT FIREBASE
+  // A REVOIR AVEC REACT FIREBASE
   resetPassword = () => {
     Alert.alert("Action sélectionnée", "Mise à jour du mot de passe");
   };
 
-// A REVOIR AVEC REACT FIREBASE
+  // A REVOIR AVEC REACT FIREBASE
   signUp = () => {
     Alert.alert("Action sélectionnée", "Inscription");
   };
-  
+
   render() {
-      return (
-        <View style={styles.container}>
+    return (
+      <View style={styles.container}>
         <Image
           style={styles.formImage}
           source={require("../assets/logo.png")}
@@ -92,36 +92,35 @@ export default class AuthenticationForm extends Component<
           <Text>S'inscrire</Text>
         </TouchableOpacity>
       </View>
-      );
+    );
   }
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
-      backgroundColor: "lightgrey",
-    },
-    formImage: {
-      borderBottomWidth: 1,
-      width: 100,
-      height: 100,
-      marginBottom: 20,
-    },
-    buttonContainer: {
-      height: 45,
-      justifyContent: "center",
-      alignItems: "center",
-      marginBottom: 20,
-      width: 250,
-      borderRadius: 30,
-    },
-    signInButton: {
-      backgroundColor: "skyblue",
-    },
-    loginText: {
-      color: "white",
-    },
-  });
-  
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "lightgrey",
+  },
+  formImage: {
+    borderBottomWidth: 1,
+    width: 100,
+    height: 100,
+    marginBottom: 20,
+  },
+  buttonContainer: {
+    height: 45,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 20,
+    width: 250,
+    borderRadius: 30,
+  },
+  signInButton: {
+    backgroundColor: "skyblue",
+  },
+  loginText: {
+    color: "white",
+  },
+});

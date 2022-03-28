@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Text, View, Button } from "react-native";
-import { AddScreenProps } from "../navigation/app-stacks";
+import { ProfileScreenProps } from "../navigation/app-stacks";
 
-export default class AddScreen extends Component<AddScreenProps, {}> {
+export default class ProfileScreen extends Component<ProfileScreenProps, {}> {
   render() {
     const { navigation } = this.props;
 
@@ -14,7 +14,7 @@ export default class AddScreen extends Component<AddScreenProps, {}> {
           alignItems: "center",
         }}
       >
-        <Text> Crée ta propre tenue !</Text>
+        <Text> Profil </Text>
       </View>
     );
   }

@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../screens/HomeScreen";
 import DressingScreen from "../screens/DressingScreen";
 import AddScreen from "../screens/AddScreen";
+import ProfileScreen from "../screens/AddScreen";
 
 // Define view names and associated params
 // undefined = no params passed to view
@@ -11,6 +12,7 @@ export type RootStackParamList = {
   Home: undefined;
   Dressing: undefined;
   Add: undefined;
+  Profile: undefined;
 };
 
 // Define view stack inside home tab
@@ -22,6 +24,7 @@ export const HomeStackScreen = () => {
       <HomeStack.Screen name="Home" component={HomeScreen} />
       <HomeStack.Screen name="Dressing" component={DressingScreen} />
       <HomeStack.Screen name="Add" component={AddScreen} />
+      <HomeStack.Screen name="Profile" component={ProfileScreen} />
     </HomeStack.Navigator>
   );
 };
@@ -29,28 +32,31 @@ export const HomeStackScreen = () => {
 // Define view stack inside Dressing tab
 const DressingStack = createStackNavigator<RootStackParamList>();
 export const DressingStackScreen = () => {
-    return (
-        <DressingStack.Navigator>
-            <DressingStack.Screen
-                name="Dressing"
-                component={DressingScreen}
-            />
-        </DressingStack.Navigator>
-    );
+  return (
+    <DressingStack.Navigator>
+      <DressingStack.Screen name="Dressing" component={DressingScreen} />
+    </DressingStack.Navigator>
+  );
 };
 
-
-/// Define view stack inside Dressing tab
+/// Define view stack inside Add tab
 const AddStack = createStackNavigator<RootStackParamList>();
 export const AddStackScreen = () => {
-    return (
-        <AddStack.Navigator>
-            <AddStack.Screen
-                name="Add"
-                component={AddScreen}
-            />
-        </AddStack.Navigator>
-    );
+  return (
+    <AddStack.Navigator>
+      <AddStack.Screen name="Add" component={AddScreen} />
+    </AddStack.Navigator>
+  );
+};
+
+/// Define view stack inside Profile tab
+const ProfileStack = createStackNavigator<RootStackParamList>();
+export const ProfileStackScreen = () => {
+  return (
+    <ProfileStack.Navigator>
+      <ProfileStack.Screen name="Profile" component={ProfileScreen} />
+    </ProfileStack.Navigator>
+  );
 };
 
 export interface HomeScreenProps {
@@ -62,5 +68,9 @@ export interface DressingScreenProps {
 }
 
 export interface AddScreenProps {
-    navigation: StackNavigationProp<RootStackParamList, "Add">;
-  }
+  navigation: StackNavigationProp<RootStackParamList, "Add">;
+}
+
+export interface ProfileScreenProps {
+  navigation: StackNavigationProp<RootStackParamList, "Profile">;
+}
