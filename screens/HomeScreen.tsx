@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Text, View, Button } from "react-native";
-//import { HomeScreenProps } from "../navigation/app-stacks";
+import { HomeScreenProps } from "../navigation/app-stacks";
 
 export default class HomeScreen extends Component<HomeScreenProps, {}> {
   render() {
@@ -14,15 +14,7 @@ export default class HomeScreen extends Component<HomeScreenProps, {}> {
           alignItems: "center",
         }}
       >
-        <Text>Homes!</Text>
-        <Button
-          title="Go to Dressing"
-          onPress={() => navigation.navigate("Dressing")}
-        />
-        <Button
-          title="Go to Profile"
-          onPress={() => navigation.navigate("Profile")}
-        />
+        <Text> Bienvenue ! Voici une proposition de tenue du jour</Text>
       </View>
     );
   }

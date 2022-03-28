@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { StyleSheet, View,Text } from "react-native";
 import { User } from "./services/authentication.service";
-import AuthenticationForm from "./screens/AuthenticationFormScreen"; 
+import { TabNavigator } from "./navigation/tab-navigation";
+
+
 
 interface AppState {
   currentUser: User | null;
@@ -19,7 +21,7 @@ export default class App extends Component<{}, AppState> {
  render() {
     return (
       <View style={styles.container}>
-        <AuthenticationForm/>
+        <TabNavigator></TabNavigator>
       </View>
     );
   }
