@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, View,Text } from "react-native";
 import { User } from "./services/authentication.service";
-import AuthenticationForm from "./screens/AuthenticationForm"; 
+import AuthenticationForm from "./screens/AuthenticationFormScreen"; 
 
 interface AppState {
   currentUser: User | null;
