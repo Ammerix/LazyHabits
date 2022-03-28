@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Alert,
 } from "react-native";
-import Input from "./Input";
+import Input from "../components/Input";
 import authenticationService, {
     User,
   } from "../services/authentication.service";
