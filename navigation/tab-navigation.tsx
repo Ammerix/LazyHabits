@@ -31,14 +31,12 @@ export const TabNavigator = () => {
             } else if (route.name === "Profile") {
               iconName = focused ? "ios-person-sharp" : "ios-person-outline";
             }
-
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
         })}
-       
       >
-        <Tab.Screen name="Home" component={HomeStackScreen} />
+        <Tab.Screen name="Test" component={HomeStackScreen} />
         <Tab.Screen name="Dressing" component={DressingStackScreen} />
         <Tab.Screen name="Add" component={AddStackScreen} />
         <Tab.Screen name="Profile" component={ProfileStackScreen} />
@@ -46,3 +44,10 @@ export const TabNavigator = () => {
     </NavigationContainer>
   );
 };
+
+/*
+{
+   headerMode: 'none'
+});
+
+*/
