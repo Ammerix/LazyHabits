@@ -36,6 +36,7 @@ export const TabNavigator = () => {
             return <Ionicons name={iconName} size={size} color={color} />;
           },
         })}
+       
       >
         <Tab.Screen name="Home" component={HomeStackScreen} />
         <Tab.Screen name="Dressing" component={DressingStackScreen} />

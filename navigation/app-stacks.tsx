@@ -4,7 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../screens/HomeScreen";
 import DressingScreen from "../screens/DressingScreen";
 import AddScreen from "../screens/AddScreen";
-import ProfileScreen from "../screens/AddScreen";
+import ProfileScreen from "../screens/ProfileScreen";
 
 // Define view names and associated params
 // undefined = no params passed to view
@@ -35,6 +35,9 @@ export const DressingStackScreen = () => {
   return (
     <DressingStack.Navigator>
       <DressingStack.Screen name="Dressing" component={DressingScreen} />
+      <DressingStack.Screen name="Home" component={HomeScreen} />
+      <DressingStack.Screen name="Add" component={AddScreen} />
+      <DressingStack.Screen name="Profile" component={ProfileScreen} />
     </DressingStack.Navigator>
   );
 };
@@ -45,6 +48,9 @@ export const AddStackScreen = () => {
   return (
     <AddStack.Navigator>
       <AddStack.Screen name="Add" component={AddScreen} />
+      <AddStack.Screen name="Dressing" component={DressingScreen} />
+      <AddStack.Screen name="Home" component={HomeScreen} />
+      <AddStack.Screen name="Profile" component={ProfileScreen} />
     </AddStack.Navigator>
   );
 };
@@ -55,6 +61,9 @@ export const ProfileStackScreen = () => {
   return (
     <ProfileStack.Navigator>
       <ProfileStack.Screen name="Profile" component={ProfileScreen} />
+      <ProfileStack.Screen name="Add" component={AddScreen} />
+      <ProfileStack.Screen name="Dressing" component={DressingScreen} />
+      <ProfileStack.Screen name="Home" component={HomeScreen} />
     </ProfileStack.Navigator>
   );
 };
