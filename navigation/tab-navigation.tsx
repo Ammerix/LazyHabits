@@ -45,7 +45,7 @@ export const TabNavigator = () => {
   );
 };
 
-/*
+/* Solution ? Si oui où la mettre ?
 {
    headerMode: 'none'
 });
