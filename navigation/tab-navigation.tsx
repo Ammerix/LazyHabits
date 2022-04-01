@@ -36,7 +36,7 @@ export const TabNavigator = () => {
           },
         })}
       >
-        <Tab.Screen name="Test" component={HomeStackScreen} />
+        <Tab.Screen name="Home" component={HomeStackScreen} />
         <Tab.Screen name="Dressing" component={DressingStackScreen} />
         <Tab.Screen name="Add" component={AddStackScreen} />
         <Tab.Screen name="Profile" component={ProfileStackScreen} />
