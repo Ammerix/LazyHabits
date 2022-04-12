@@ -29,7 +29,7 @@ export default function AddScreen () {
 
     console.log(result);
     if (!result.cancelled) {
-      setImage(result.uri); // erreur mais fonctionne quand même 
+      setImage(result.uri); // visiblement erreur mais fonctionne quand même 
     }
     
   };
