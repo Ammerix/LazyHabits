@@ -4,6 +4,7 @@ import { User } from "./services/authentication.service";
 import { TabNavigator } from "./navigation/tab-navigation";
 
 
+
 interface AppState {
   currentUser: User | null;
 }
@@ -22,6 +23,7 @@ export default class App extends Component<{}, AppState> {
       <View style={styles.container}>
         <TabNavigator/>
       </View>
+      
     );
   }
 }

@@ -1,6 +1,8 @@
-import React, { Component } from "react";
-import { Text, View, Button } from "react-native";
+import React, { Component ,useState,useEffect} from "react";
+import { Text, View, Button,TouchableOpacity , Image, Platform } from "react-native";
 import { HomeScreenProps } from "../navigation/app-stacks";
+import * as ImagePicker from "expo-image-picker"
+
 
 export default class HomeScreen extends Component<HomeScreenProps, {}> {
   render() {
@@ -14,8 +16,11 @@ export default class HomeScreen extends Component<HomeScreenProps, {}> {
           alignItems: "center",
         }}
       >
-        <Text> Bienvenue ! Voici une proposition de tenue du jour</Text>
+        <Text> Page d'acceuil </Text>
       </View>
     );
   }
 }
+        
+
+
