@@ -1,0 +1,38 @@
+{"habits":[
+  {"idHabit":"100",
+    "nomHabit":"Pull de Noël",
+    "imageHabit":"",
+    "categorieHabit": "Pull"
+  },
+  {"idHabit":"101",
+    "nomHabit":"T-shirt Nirvana",
+    "imageHabit":"",
+    "categorieHabit": "T-shirt"
+  },
+  {"idHabit":"102",
+    "nomHabit":"Jean",
+    "imageHabit":"",
+    "categorieHabit": "Pantalon"
+  },
+  {"idHabit":"103",
+    "nomHabit":"Pull pyjama",
+    "imageHabit":"",
+    "categorieHabit": "Pull"
+  },
+  {"idHabit":"104",
+    "nomHabit":"T-shirt uni",
+    "imageHabit":"",
+    "categorieHabit": "T-shirt"
+  },
+  {"idHabit":"105",
+    "nomHabit":"Pantalon en lin",
+    "imageHabit":"",
+    "categorieHabit": "Pantalon"
+  },
+  {"idHabit":"106",
+    "nomHabit":"",
+    "imageHabit":"",
+    "categorieHabit": "Chaussure"
+  }
+]
+}
