@@ -32,7 +32,7 @@ export default class App extends Component<{}, DressingScreenState > {
       <View>
         <HabitList
           habits={this.state.Dressings}
-        />
+        />          
       </View>
       );
   };

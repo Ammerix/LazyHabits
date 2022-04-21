@@ -1,9 +1,6 @@
-import React, { Component} from "react";
-import {
-  Text,
-  View,
-  StyleSheet
-} from "react-native";
+import React, { Component } from "react";
+import { Text, View, StyleSheet } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import { HomeScreenProps } from "../navigation/app-stacks";
 
 export default class HomeScreen extends Component<HomeScreenProps, {}> {
@@ -13,13 +10,19 @@ export default class HomeScreen extends Component<HomeScreenProps, {}> {
     //var item = items[Math.floor(Math.random()*items.length)];
 
     return (
-      <View
-        style={styles.container}
-      >
+      <View style={styles.container}>
         <Text style={styles.text}>
           Bon matin ! Voici une proposition de tenue adaptée à la météo
           d’aujourd’hui. N’hésite pas à l’ajuster à ton goût.
         </Text>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            alert("Ouvre l'application météo");
+          }}
+        >
+          <Text>Météo</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -28,11 +31,20 @@ export default class HomeScreen extends Component<HomeScreenProps, {}> {
 const styles = StyleSheet.create({
   text: {
     margin: 20,
-    textAlign: 'center',
+    textAlign: "center",
     fontSize: 16,
   },
   container: {
     flex: 1,
     alignItems: "center",
+    justifyContent : "space-between",
+  },
+  button: {
+    alignItems: "center",
+    borderColor: 'pink',
+    borderWidth: 2,
+    borderRadius: 30,
+    padding: 20,
+
   },
 });
