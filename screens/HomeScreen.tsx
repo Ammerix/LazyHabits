@@ -1,26 +1,38 @@
-import React, { Component ,useState,useEffect} from "react";
-import { Text, View, Button,TouchableOpacity , Image, Platform } from "react-native";
+import React, { Component} from "react";
+import {
+  Text,
+  View,
+  StyleSheet
+} from "react-native";
 import { HomeScreenProps } from "../navigation/app-stacks";
-import * as ImagePicker from "expo-image-picker"
-
 
 export default class HomeScreen extends Component<HomeScreenProps, {}> {
   render() {
     const { navigation } = this.props;
 
+    //var item = items[Math.floor(Math.random()*items.length)];
+
     return (
       <View
-        style={{
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
+        style={styles.container}
       >
-        <Text> Page d'acceuil </Text>
+        <Text style={styles.text}>
+          Bon matin ! Voici une proposition de tenue adaptée à la météo
+          d’aujourd’hui. N’hésite pas à l’ajuster à ton goût.
+        </Text>
       </View>
     );
   }
 }
-        
 
-
+const styles = StyleSheet.create({
+  text: {
+    margin: 20,
+    textAlign: 'center',
+    fontSize: 16,
+  },
+  container: {
+    flex: 1,
+    alignItems: "center",
+  },
+});

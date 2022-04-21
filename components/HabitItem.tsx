@@ -3,13 +3,13 @@ import { Text, View, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { DressingScreenProps } from "../navigation/app-stacks";
 import Habit from "../services/habit.model";
 
-interface HabitItemProps extends DressingScreenProps{
+interface HabitItemProps{
   habit: Habit;
 }
 
 export default class HabitItem extends Component<HabitItemProps> {
   render() {
-    const { habit, navigation} = this.props;
+    const { habit} = this.props;
     return (
       <View>
         <TouchableOpacity
@@ -30,6 +30,9 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     alignItems: "center",
+    borderColor: 'pink',
+    borderWidth: 2,
+    borderRadius: 10,
     margin: 5,
   },
   text: {
