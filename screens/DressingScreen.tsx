@@ -1,106 +1,46 @@
 import React, { Component } from "react";
-import { Text, View, StyleSheet, StatusBar, SafeAreaView, FlatList } from "react-native";
-import SearchBar from "../components/searchBar";
-import { DressingScreenProps } from "../navigation/app-stacks";
-//import ClothesDbApi from "../services/clothesdbapi.service";
+import { FlatList, Text, StyleSheet } from "react-native";
+import Habit from "../services/habit.model";
 
 interface DressingScreenState {
-  //Dressings: Array<Clothes>;
-}
+    Dressings: Array<Habit>;
+  }
 
-export default class DressingScreen extends Component<
-  DressingScreenProps,
-  DressingScreenState
-> {
-  state: DressingScreenState = {
-    Dressings: [],
+const rows: Array<Habit> = [
+  {idHabit: 100, nomHabit: "Pull de Noël", imageHabit : "", categorieHabit: "Pull"},
+  {idHabit: 101, nomHabit: "T-shirt Nirvana", imageHabit : "", categorieHabit: "T-shirt"},
+  {idHabit: 102, nomHabit: "Jean", imageHabit : "", categorieHabit: "Pantalon"},
+
+];
+
+export default class App extends Component {
+  // This function MUST take an object with an "item" property, whose type corresponds to the list element
+  renderItem = ({ item }: { item: Habit }) => {
+    return <Text style={styles.row}>{item.nomHabit}</Text>;
   };
 
-  /* ======================== A REVOIR SUIVANT L'API ========================
-    getResults = (name: string) => {
-        ClothesVDbApi.searchDressingsByName(name).then((results) => {
-            this.setState({ Dressings: results });
-        });
-    };
-    ========================================================================*/
-     
-
   render() {
-    const { navigation } = this.props;
-
     return (
-      <View
-        style={{
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Text>Dressing</Text>
-      </View>
+      <FlatList<Habit>
+        style={styles.container}
+        data={rows}
+        renderItem={this.renderItem}
+        // FlatList keys must be strings
+        keyExtractor={(item: Habit) => item.idHabit.toString()}
+      />
     );
   }
 }
 
-{/*
-    const clothesData = require('./assets/clothes.json');
-    
-    const Item = ({ id }) => (
-      <View style={styles.item}>
-        <Text style={styles.title}>{id}</Text>
-      </View>
-    );
-    
-    const App = () => {
-      const renderItem = ({ item }) => (
-        <Item id={item.title} />
-      );
-    
-      return (
-        <SafeAreaView style={styles.container}>
-          <FlatList
-            data={clothesData}
-            renderItem={renderItem}
-            keyExtractor={item => item.id}
-          />
-        </SafeAreaView>
-      );
-    }
-
-    return (
-      <View
-        style={{
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Text>Dressing</Text>
-
-        <SearchBar onSubmitEditing={this.getResults} />
-                <ClothesList
-                    Clothes={this.state.Clothes}
-                    navigation={navigation}
-        />
-      </View>
-    );
-
-    const styles = StyleSheet.create({
-      container: {
-        flex: 1,
-        marginTop: StatusBar.currentHeight || 0,
-      },
-      item: {
-        backgroundColor: '#f9c2ff',
-        padding: 20,
-        marginVertical: 8,
-        marginHorizontal: 16,
-      },
-      title: {
-        fontSize: 32,
-      },
-    });
-    
-  }
-}
-*/}
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 48,
+    flex: 1,
+  },
+  row: {
+    fontSize: 18,
+    padding: 10,
+    marginBottom: 5,
+    backgroundColor: "skyblue",
+  },
+});

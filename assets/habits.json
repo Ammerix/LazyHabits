@@ -1,4 +1,4 @@
-{"habits":[
+[
   {"idHabit":"100",
     "nomHabit":"Pull de Noël",
     "imageHabit":"",
@@ -35,4 +35,3 @@
     "categorieHabit": "Chaussure"
   }
 ]
-}
