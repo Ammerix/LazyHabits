@@ -3,7 +3,7 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../screens/HomeScreen";
 import DressingScreen from "../screens/DressingScreen";
-import AddScreen from "../screens/AddScreen";
+import CreateScreen from "../screens/CreateScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 
 // Define view names and associated params
@@ -11,7 +11,7 @@ import ProfileScreen from "../screens/ProfileScreen";
 export type RootStackParamList = {
   Home: undefined;
   Dressing: undefined;
-  Add: undefined;
+  Create: undefined;
   Profile: undefined;
 };
 
@@ -23,7 +23,7 @@ export const HomeStackScreen = () => {
     <HomeStack.Navigator>
       <HomeStack.Screen name="Home" component={HomeScreen} />
       <HomeStack.Screen name="Dressing" component={DressingScreen} />
-      <HomeStack.Screen name="Add" component={AddScreen} />
+      <HomeStack.Screen name="Create" component={CreateScreen} />
       <HomeStack.Screen name="Profile" component={ProfileScreen} />
     </HomeStack.Navigator>
   );
@@ -36,22 +36,22 @@ export const DressingStackScreen = () => {
     <DressingStack.Navigator>
       <DressingStack.Screen name="Dressing" component={DressingScreen} />
       <DressingStack.Screen name="Home" component={HomeScreen} />
-      <DressingStack.Screen name="Add" component={AddScreen} />
+      <DressingStack.Screen name="Create" component={CreateScreen} />
       <DressingStack.Screen name="Profile" component={ProfileScreen} />
     </DressingStack.Navigator>
   );
 };
 
-/// Define view stack inside Add tab
-const AddStack = createStackNavigator<RootStackParamList>();
-export const AddStackScreen = () => {
+/// Define view stack inside Create tab
+const CreateStack = createStackNavigator<RootStackParamList>();
+export const CreateStackScreen = () => {
   return (
-    <AddStack.Navigator>
-      <AddStack.Screen name="Add" component={AddScreen} />
-      <AddStack.Screen name="Dressing" component={DressingScreen} />
-      <AddStack.Screen name="Home" component={HomeScreen} />
-      <AddStack.Screen name="Profile" component={ProfileScreen} />
-    </AddStack.Navigator>
+    <CreateStack.Navigator>
+      <CreateStack.Screen name="Create" component={CreateScreen} />
+      <CreateStack.Screen name="Dressing" component={DressingScreen} />
+      <CreateStack.Screen name="Home" component={HomeScreen} />
+      <CreateStack.Screen name="Profile" component={ProfileScreen} />
+    </CreateStack.Navigator>
   );
 };
 
@@ -61,7 +61,7 @@ export const ProfileStackScreen = () => {
   return (
     <ProfileStack.Navigator>
       <ProfileStack.Screen name="Profile" component={ProfileScreen} />
-      <ProfileStack.Screen name="Add" component={AddScreen} />
+      <ProfileStack.Screen name="Create" component={CreateScreen} />
       <ProfileStack.Screen name="Dressing" component={DressingScreen} />
       <ProfileStack.Screen name="Home" component={HomeScreen} />
     </ProfileStack.Navigator>
@@ -76,8 +76,8 @@ export interface DressingScreenProps {
   navigation: StackNavigationProp<RootStackParamList, "Dressing">;
 }
 
-export interface AddScreenProps {
-  navigation: StackNavigationProp<RootStackParamList, "Add">;
+export interface CreateScreenProps {
+  navigation: StackNavigationProp<RootStackParamList, "Create">;
 }
 
 export interface ProfileScreenProps {

@@ -6,7 +6,7 @@ import {
   RootStackParamList,
   HomeStackScreen,
   DressingStackScreen,
-  AddStackScreen,
+  CreateStackScreen,
   ProfileStackScreen,
 } from "./app-stacks";
 
@@ -17,7 +17,10 @@ export const TabNavigator = () => {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
-          headerShown: false,
+          headerShown: true,
+          headerStyle: {
+            backgroundColor : 'pink'
+          },
           tabBarIcon: ({ focused, color, size }) => {
             let iconName: any; // TODO: find better type
 
@@ -25,7 +28,7 @@ export const TabNavigator = () => {
               iconName = focused ? "ios-home-sharp" : "ios-home-outline";
             } else if (route.name === "Dressing") {
               iconName = focused ? "ios-grid-sharp" : "ios-grid-outline";
-            } else if (route.name === "Add") {
+            } else if (route.name === "Create") {
               iconName = focused
                 ? "ios-add-circle-sharp"
                 : "ios-add-circle-outline";
@@ -37,18 +40,12 @@ export const TabNavigator = () => {
           },
         })}
       >
-        <Tab.Screen name="Home" component={HomeStackScreen} />
+        <Tab.Screen name="Home" component={HomeStackScreen}/>
         <Tab.Screen name="Dressing" component={DressingStackScreen} />
-        <Tab.Screen name="Add" component={AddStackScreen} />
+        <Tab.Screen name="Create" component={CreateStackScreen} />
         <Tab.Screen name="Profile" component={ProfileStackScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
 };
 
-/* Solution ? Si oui où la mettre ?
-{
-   headerMode: 'none'
-});
-
-*/
