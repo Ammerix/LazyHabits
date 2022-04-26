@@ -1,9 +1,8 @@
-import React, { Component ,useState,useEffect} from "react";
+import React, { useState,useEffect } from "react";
 import { Text, View, Button, Image, Platform } from "react-native";
-import { HomeScreenProps } from "../navigation/app-stacks";
 import * as ImagePicker from "expo-image-picker"
 
-export default function AddScreen () {
+export default function CreateScreen () {
   const [image, setImage] = useState(null);
 
   // Si on a pas la permission

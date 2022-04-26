@@ -1,15 +1,12 @@
-> Why do I have a folder named ".expo" in my project?
+Bienvenue dans le projet LazyHabits !
+Pour lancer l'application, veuillez suivre ces intructions :
+> Ouvrez un terminal au dossier 
+> Exécutez les commandes suivantes :
+npm ci
+npm start 
 
-The ".expo" folder is created when an Expo project is started using "expo start" command.
+Une interface de gestion web s'ouvre sur votre navigateur. 
+Si vous souhaitez voir la version mobile de l'application, il vous suffit de télécharger l'application Expo Go et de scanner le QR code avec votre téléphone. 
+Si vous souhaitez voir la version web, il vous suffit de sélectionner à gauche de votre écran "Run in web browser". Il faut alors réduire la largeur d’écran ou utiliser les “options pour développeurs” afin de simuler l’affichage d’un smartphone. 
 
-> What do the files contain?
 
-- "devices.json": contains information about devices that have recently opened this project. This is used to populate the "Development sessions" list in your development builds.
-- "packager-info.json": contains port numbers and process PIDs that are used to serve the application to the mobile device/simulator.
-- "settings.json": contains the server configuration that is used to serve the application manifest.
-
-> Should I commit the ".expo" folder?
-
-No, you should not share the ".expo" folder. It does not contain any information that is relevant for other developers working on the project, it is specific to your machine.
-
-Upon project creation, the ".expo" folder is already added to your ".gitignore" file.
