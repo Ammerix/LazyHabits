@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from "react";
-import { Text, View, Button, Image, Platform } from "react-native";
+import { Text, View, Image, Platform, StyleSheet } from "react-native";
 import * as ImagePicker from "expo-image-picker"
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default function CreateScreen () {
   const [image, setImage] = useState(null);
@@ -34,10 +35,25 @@ export default function CreateScreen () {
   };
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Créer une tenue</Text>
-      <Button title="Pick an image from camera roll" onPress={pickImage} />
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'space-between' }}>
+      <Text style={styles.text}>Crée une tenue en partant de zéro !</Text>
+      <TouchableOpacity style={styles.button} onPress={pickImage}>          
+      <Text>Ouvrir la galerie photo</Text>
+      </TouchableOpacity>
       {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
     </View>
   );
 }
+const styles = StyleSheet.create({
+  button: {
+    alignItems: "center",
+    borderWidth: 2,
+    borderRadius: 30,
+    padding: 20,
+  },
+  text: {
+    margin: 20,
+    textAlign: "center",
+    fontSize: 16,
+  },
+});

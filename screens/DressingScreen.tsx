@@ -11,14 +11,6 @@ interface DressingScreenState {
 
 const tableauHabits: Array<Habit> = require("../assets/habits.json");
 
-/*[
-  {idHabit: 100, nomHabit: "Pull de Noël", imageHabit : "", categorieHabit: "Pull"},
-  {idHabit: 101, nomHabit: "T-shirt Nirvana", imageHabit : "", categorieHabit: "T-shirt"},
-  {idHabit: 102, nomHabit: "Jean", imageHabit : "", categorieHabit: "Pantalon"},
-
-];
-*/
-
 export default class App extends Component<{}, DressingScreenState > {
     
         state: DressingScreenState = {
