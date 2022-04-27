@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, Button } from "react-native";
+import { Text, View } from "react-native";
 import { ProfileScreenProps } from "../navigation/app-stacks";
 
 export default class ProfileScreen extends Component<ProfileScreenProps, {}> {

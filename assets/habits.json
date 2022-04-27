@@ -30,8 +30,43 @@
     "categorieHabit": "Pantalon"
   },
   {"idHabit":"106",
-    "nomHabit":"",
+    "nomHabit":"Vans noire",
     "imageHabit":"",
     "categorieHabit": "Chaussure"
+  },
+  {"idHabit":"107",
+    "nomHabit":"Polo Lacoste",
+    "imageHabit":"",
+    "categorieHabit": "T-shirt"
+  },
+  {"idHabit":"108",
+    "nomHabit":"Chemise à fleur",
+    "imageHabit":"",
+    "categorieHabit": "Chemise"
+  },
+  {"idHabit":"109",
+    "nomHabit":"Chemise à carreau",
+    "imageHabit":"",
+    "categorieHabit": "Chemise"
+  },
+  {"idHabit":"110",
+    "nomHabit":"Pantalon à pince",
+    "imageHabit":"",
+    "categorieHabit": "Pantalon"
+  },
+  {"idHabit":"111",
+    "nomHabit":"DocMarteens",
+    "imageHabit":"",
+    "categorieHabit": "Chaussure"
+  },
+  {"idHabit":"112",
+    "nomHabit":"Espadrille",
+    "imageHabit":"",
+    "categorieHabit": "Chaussure"
+  },
+  {"idHabit":"113",
+    "nomHabit":"Pull vintage",
+    "imageHabit":"",
+    "categorieHabit": "Pull"
   }
 ]

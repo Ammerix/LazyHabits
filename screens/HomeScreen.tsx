@@ -2,12 +2,43 @@ import React, { Component } from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { HomeScreenProps } from "../navigation/app-stacks";
+import Habit from "../services/habit.model";
+import 'react-native-gesture-handler';
 
-export default class HomeScreen extends Component<HomeScreenProps, {}> {
+
+interface HomeScreenState {
+    TenueDuJour: Array<Habit>;
+  }
+
+const tableauHabits: Array<Habit> = require("../assets/habits.json");
+
+export default class HomeScreen extends Component<HomeScreenProps, HomeScreenState> {
+  
+  state: HomeScreenState = {
+    TenueDuJour:tableauHabits,
+};
+
+//Choisi un élément random dans les habits de habits.json
+pickRandomHabit(tableauHabits: Array<Habit>): Habit {
+  let habits = tableauHabits;
+
+  let habitIds: Array<number> = [];
+  habits.forEach((habit) => habitIds.push(habit.idHabit));
+
+  let targetIndex = Math.floor(Math.random() * (habitIds.length - 1));
+  let targetId = habitIds[targetIndex];
+
+  let targethabit = habits.filter((l) => l.idHabit == targetId);
+  return targethabit[0];
+}
+
+
   render() {
     const { navigation } = this.props;
+    var item1 = this.pickRandomHabit(tableauHabits);
+    var item2 = this.pickRandomHabit(tableauHabits);
+    var item3 = this.pickRandomHabit(tableauHabits);
 
-    //var item = items[Math.floor(Math.random()*items.length)];
 
     return (
       <View style={styles.container}>
@@ -15,6 +46,10 @@ export default class HomeScreen extends Component<HomeScreenProps, {}> {
           Bon matin ! Voici une proposition de tenue adaptée à la météo
           d’aujourd’hui. N’hésite pas à l’ajuster à ton goût.
         </Text>
+        <Text style={styles.habit}>{item1.nomHabit}</Text>
+        <Text style={styles.habit}>{item2.nomHabit}</Text>
+        <Text style={styles.habit}>{item3.nomHabit}</Text>
+
         <TouchableOpacity
           style={styles.button}
           onPress={() => {
@@ -45,6 +80,11 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 30,
     padding: 20,
-
   },
+  habit: {
+    alignItems: "center",
+    borderColor: 'black',
+    borderWidth: 2,
+    padding: 20,
+  }
 });

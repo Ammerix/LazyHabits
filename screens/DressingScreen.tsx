@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text } from "react-native";
 import Habit from "../services/habit.model";
 import HabitList from  "../components/HabitList";
 import 'react-native-gesture-handler';

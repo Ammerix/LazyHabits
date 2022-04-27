@@ -19,7 +19,7 @@ export const TabNavigator = () => {
         screenOptions={({ route }) => ({
           headerShown: false,
           tabBarIcon: ({ focused, color, size }) => {
-            let iconName: any; // TODO: find better type
+            let iconName: any; 
 
             if (route.name === "Home") {
               iconName = focused ? "ios-home-sharp" : "ios-home-outline";

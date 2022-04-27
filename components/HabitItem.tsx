@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Text, View, StyleSheet, TouchableOpacity, Image } from "react-native";
-import { DressingScreenProps } from "../navigation/app-stacks";
 import Habit from "../services/habit.model";
 
 interface HabitItemProps{
