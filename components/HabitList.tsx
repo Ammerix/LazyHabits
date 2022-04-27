@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, StyleSheet, FlatList } from "react-native";
+import { View, StyleSheet, FlatList } from "react-native";
 import Habit from "../services/habit.model";
 import HabitItem from "./HabitItem";
 
@@ -8,31 +8,28 @@ interface HabitListProps {
 }
 
 export default class HabitList extends Component<HabitListProps> {
-  render() {
-    if (this.props.habits?.length > 0)
-      return (
-        <FlatList<Habit>
-          style={styles.habitList}
-          data={this.props.habits}
-          keyExtractor={(habit) => habit.idHabit.toString()}
-          renderItem={({ item }) => {
-            return (
-              <HabitItem
-                habit={item}
-              />
-            );
-          }}
-        />
-      );
-    else
-      return (
-        <View style={styles.container}>
-          <Text style={styles.text}> Test habitListe</Text>
-        </View>
-      );
-  }
-}
+  renderItem = ({ item }: { item: Habit }) => {
+    return (
+        <HabitItem habit={item} />
+    );
+};
 
+render() {
+    return (
+        <View style={styles.container}>
+            <FlatList<Habit>
+                style={styles.habitList}
+                data={this.props.habits}
+                renderItem={this.renderItem}
+                keyExtractor={(item: Habit) =>
+                    item.nomHabit.toString()
+                }
+            />
+        </View>
+    );
+}
+}
+  
 const styles = StyleSheet.create({
   habitList: {
     flex: 1,
